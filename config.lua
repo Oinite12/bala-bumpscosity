@@ -1,0 +1,3 @@
+return {
+    ["bumpscosity"] = 25,
+}

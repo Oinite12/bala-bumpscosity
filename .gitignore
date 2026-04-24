@@ -1,0 +1,5 @@
+/.lovelyignore
+.vscode
+.ignore
+.luarc.json
+*.code-workspace
