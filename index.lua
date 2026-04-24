@@ -21,7 +21,7 @@ end
 
 local bumps_mod_obj = SMODS.current_mod --[[@as table]]
 local bumps_cfg = bumps_mod_obj.config
-local bumps_low  = 10
+local bumps_low = 10
 local bumps_high = 90
 
 -- Add Bumpscosity slider
@@ -30,16 +30,14 @@ function G.UIDEF.settings_tab(tab)
     local uidef = uid_settings_ref(tab)
     if tab ~= 'Game' then return uidef end
 
-    local root_nodes = uidef.nodes
-    table.insert(root_nodes, 3, create_slider({
+    table.insert(uidef.nodes, 3, create_slider({
         label = localize('b_bumps_bumpscosity'),
-        w = 4,
-        h = 0.4,
+        w = 4, h = 0.4,
         ref_table = bumps_cfg,
         ref_value = "bumpscosity",
-        min = 0,
-        max = 100
+        min = 0, max = 100
     }))
+
     return uidef
 end
 
@@ -49,6 +47,7 @@ function SMODS.quip(quip_type)
     local bumps = bumps_cfg.bumpscosity
     local bumps_is_low  = bumps <= bumps_low
     local bumps_is_high = bumps_high <= bumps
+
     if not (bumps_is_low or bumps_is_high) then
         return smods_quip_ref(quip_type)
     end
@@ -61,19 +60,18 @@ function SMODS.quip(quip_type)
 end
 
 -- Add quips
-local return_false = function(self, quip_type) return false end
+local ret_false = function(self, quip_type) return false end
 for _,type in ipairs({'loss', 'win'}) do
     for _,amount in ipairs({'low', 'high'}) do
         SMODS.JimboQuip {
             key = ('jimbo_%s_%s_bumps'):format(type, amount),
-            type = type, filter = return_false
+            type = type, filter = ret_false
         }
     end
 end
 
 -- Mod icon
-SMODS.Atlas {
-    key = 'modicon',
+SMODS.Atlas { key = 'modicon',
     path = 'modicon.png',
     px = 34, py = 34
 }
