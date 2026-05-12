@@ -21,8 +21,7 @@ end
 
 local bumps_mod_obj = SMODS.current_mod --[[@as table]]
 local bumps_cfg = bumps_mod_obj.config
-local bumps_low = 10
-local bumps_high = 90
+local bumps_low, bumps_high = 10, 90
 
 -- Add Bumpscosity slider
 local uid_settings_ref = G.UIDEF.settings_tab
