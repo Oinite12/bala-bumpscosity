@@ -1,7 +1,6 @@
 {
 	"id": "bumpscosity",
 	"name": "Bumpscosity",
-	"display_name": "Bumpscosity",
 	"prefix": "bumps",
 	"author": ["Oinite"],
 	"description": "Adds a bumpscosity slider to Balatro, which increases how much bumpscosity you get in your runs.",
@@ -9,8 +8,7 @@
 	"main_file": "index.lua",
 	"badge_colour": "#333333",
 	"badge_text_colour": "#FFFFFF",
-	"version": "1.0.0",
-	"dependencies": [
-		"Steamodded (>=1.0.0~BETA-1620a)"
-	]
+	"icon_path": "modicon.png",
+	"version": "1.0.2",
+	"dependencies": [ "Steamodded (>=1.0.0~BETA-1814a)" ]
 }

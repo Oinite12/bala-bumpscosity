@@ -3,21 +3,19 @@
 if (
 	(SMODS.Mods["Talisman"] or {}).can_load
 	and not (SMODS.Mods["Amulet"] or {}).can_load
-) then
-	error([[TALISMAN detected!
+) then error([[TALISMAN detected!
 
 
 
 
-====== HOW TO FIX THIS CRASH ======
+====!! HOW TO FIX THIS CRASH !!====
 1. Uninstall Talisman
 2. Install Amulet
 https://github.com/frostice482/amulet
 
 
 
-]])
-end
+]]) end
 
 local bumps_mod_obj = SMODS.current_mod --[[@as table]]
 local bumps_cfg = bumps_mod_obj.config
@@ -52,14 +50,12 @@ function SMODS.quip(quip_type)
     end
 
     local key = 'bumps_jimbo_%s_%s_bumps'
-    local type = quip_type
     local amount = (bumps_is_low and 'low') or (bumps_is_high and 'high')
-
-    return key:format(type, amount), {}
+    return key:format(quip_type, amount), {}
 end
 
 -- Add quips
-local ret_false = function(self, quip_type) return false end
+local ret_false = function() return false end
 for _,type in ipairs({'loss', 'win'}) do
     for _,amount in ipairs({'low', 'high'}) do
         SMODS.JimboQuip {
@@ -68,9 +64,3 @@ for _,type in ipairs({'loss', 'win'}) do
         }
     end
 end
-
--- Mod icon
-SMODS.Atlas { key = 'modicon',
-    path = 'modicon.png',
-    px = 34, py = 34
-}

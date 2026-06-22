@@ -1,3 +1,1 @@
-return {
-    ["bumpscosity"] = 25,
-}
+return{["bumpscosity"]=25}
