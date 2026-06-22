@@ -1,22 +1,3 @@
--- Talisman incompat
--- for the funy xd
-if (
-	(SMODS.Mods["Talisman"] or {}).can_load
-	and not (SMODS.Mods["Amulet"] or {}).can_load
-) then error([[TALISMAN detected!
-
-
-
-
-====!! HOW TO FIX THIS CRASH !!====
-1. Uninstall Talisman
-2. Install Amulet
-https://github.com/frostice482/amulet
-
-
-
-]]) end
-
 local bumps_mod_obj = SMODS.current_mod --[[@as table]]
 local bumps_cfg = bumps_mod_obj.config
 local bumps_low, bumps_high = 10, 90
